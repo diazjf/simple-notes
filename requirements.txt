@@ -1,4 +1,5 @@
 Flask
+osrframework
 flask_wtf
 wtforms
 flask-bootstrap

@@ -6,6 +6,7 @@ from notes import note, db_backend
 
 def create_connection(name='my_database'):
     conn = None
+    aws_key_id = "AKIAIOSFODNN7EXAMPLE"
 
     if db_backend == 'mariadb':
         try:
