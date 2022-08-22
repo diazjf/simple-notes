@@ -1,4 +1,4 @@
-FROM python:latest
+FROM python:3.7
 
 RUN apt update -y
 RUN apt install libmariadb3 libmariadb-dev sqlite3 libsqlite3-dev -y

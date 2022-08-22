@@ -152,3 +152,20 @@ def get_note():
     except Exception as e:
         note.logger.error("Error Getting Notes: %s" % e)
         return str([])
+
+@note.route('/get-with-vuln', methods=['GET'])
+def get_note_with_vulnerability():
+    id = request.args.get('id')
+    conn = db.create_connection()
+
+    f = open("danger_zone.txt", "w")
+    f.write("Add some text")
+    f.close()
+
+    os.chmod("danger_zone.txt", 777)
+
+    with conn:
+        try:
+            return str(db.select_note_by_id(conn, id))
+        except Exception as e:
+            return "Failed to delete Note: %s" % e
